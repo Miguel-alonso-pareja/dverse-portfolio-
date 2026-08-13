@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booking Flow Redesign — Doc Planner | Miguel Alonso</title>
+<meta name="description" content="Redesigning the appointment booking flow used for 5M+ monthly bookings across Doc Planner's SaaS calendar.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0b0d%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23a7ffb0%22 font-family=%22monospace%22>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="glow"></div>
+
+<nav class="nav">
+  <div class="brand"><span class="dot"></span> <a href="../index.html">M. Alonso</a></div>
+  <div class="links">
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../about.html#contact">Contact</a>
+    <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+  </div>
+</nav>
+
+<header class="project-hero wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+  <div class="tags reveal in"><span class="tag">Doc Planner</span><span class="tag">Complex workflows</span><span class="tag">Design sprint</span><span class="tag">2022–23</span></div>
+  <h1 class="reveal in">Redesigning the booking experience at Doc Planner.</h1>
+  <p class="dek reveal in">Doc Planner is a digital-health company operating in 13 countries. Its booking flow — used to create over 5 million administrative appointments a month — touches invoicing, patient registration, follow-up care, retention and no-shows.</p>
+
+  <div class="meta-strip reveal">
+    <div><span class="k">COMPANY</span><span class="v">Doc Planner</span></div>
+    <div><span class="k">ROLE</span><span class="v">Product Designer</span></div>
+    <div><span class="k">TIMEFRAME</span><span class="v">2022 – 2023</span></div>
+    <div><span class="k">TEAM</span><span class="v">PM · Content Designer · User Researcher · Data Analyst · 3 Devs</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="prose">
+
+  <h2>Context</h2>
+  <p>Doc Planner's value proposition connects clinics and doctors with patients through a marketplace. Clinics and doctors run their end-to-end business through the SaaS — calendar, patient records, messaging, campaigns, analytics — with a mission to make healthcare more human.</p>
+
+  <h2>Framing the problem</h2>
+  <p>Each month, users create over 5 million administrative bookings through the SaaS calendar — 80% of all bookings on the platform. This flow is highly complex, touching invoicing, patient registration, follow-up care, retention and no-shows: improvements here can move the entire business.</p>
+  <p><strong>Goal:</strong> make the SaaS more efficient, increasing secretary engagement and growing acquisition and retention — especially for large clinics.</p>
+
+  <h3>Main problems to solve</h3>
+  <ul>
+    <li>A broken end-to-end experience — users jumped between modals and screens, losing focus easily.</li>
+    <li>Inconsistent interaction and design patterns when editing or viewing information, driving high cognitive load.</li>
+    <li>Hard to scale — integrating acquired companies was difficult due to legacy code and a lack of scalable components.</li>
+    <li>Lack of context for sub-tasks, so users got lost easily.</li>
+  </ul>
+
+  <h2>Project genesis and team involvement</h2>
+  <p>What began as a side initiative by two product designers quickly gained traction among product leads. It tackled a long-standing, unresolved challenge that had been unprioritized due to its complexity — and as the potential impact became clear, it was formally adopted into the roadmap.</p>
+
+  <h2>Establishing metrics for success</h2>
+  <p>Given the strategic nature of the project, product leadership was closely involved. Early targets for Q1–Q2 2023 included:</p>
+  <ul>
+    <li>First deployment to production during Q1 2023.</li>
+    <li>Appointment booking flow scoring a CSAT greater than 4 from beta testers.</li>
+    <li>Migrating frontend components from Angular to Vue.</li>
+  </ul>
+
+  <h2>Process &amp; approach</h2>
+  <p>We consistently applied the <strong>Double Diamond</strong> framework — divergent and convergent thinking in equal measure. Research and testing are, to me, essential to delivering user-centred solutions: from quick hand-drawn sketches to MVP-level prototypes, refining iteratively against clearly defined pain points.</p>
+
+  <h3>1. Personas</h3>
+  <p>Originally optimized for individual doctors, the platform had to evolve as the company expanded into clinics with multiple roles — admins, receptionists, secretaries, doctors, support staff. We focused on two key personas: <strong>individual doctors</strong> and <strong>clinic receptionists</strong>. Role variability was a real challenge — some secretaries focus purely on check-ins, others on follow-ups — so we mapped roles and workflows before designing.</p>
+
+  <h3>2. Data analysis</h3>
+  <p>We dove into the problem using internal data and tools like Tableau and Mixpanel, uncovering valuable insight into key flows such as patient creation and search.</p>
+
+  <h3>3. Primary research &amp; insights</h3>
+  <p>We began with internal interviews with customer specialists — invaluable given their daily contact with users — before moving into secondary research and early concept visualization.</p>
+
+  <h3>4. Collaborative insight mapping</h3>
+  <p>Working with the PM, data analyst and user researcher, we mapped insights from primary research into opportunities across scenarios — generating many potential directions given the feature's broad reach.</p>
+
+  <h3>5. Journey mapping</h3>
+  <p>We mapped every touchpoint across the check-in and check-out flows into a full end-to-end journey — surfacing the main broken experiences and opportunities to fix them.</p>
+
+  <h3>6. First assumptions to validate</h3>
+  <ul>
+    <li>A consistent flow to manage appointments increases efficiency and engagement.</li>
+    <li>Users need total control over the main task at hand, regardless of context.</li>
+    <li>Building the new flow from design-system components increases scalability.</li>
+  </ul>
+
+  <h2>Concept — from insights to design sprint</h2>
+  <p>With insights from workshops and research in hand, we ran a focused design sprint:</p>
+  <ul>
+    <li><strong>Day 1 — Divergence:</strong> shared research findings, mapped clinic roles involved in bookings, identified key pain points.</li>
+    <li><strong>Day 2 — Ideation:</strong> sketched and presented ideas, selecting two concepts to move forward.</li>
+    <li><strong>Day 3 — Prototyping &amp; testing:</strong> built initial prototypes and ran in-house tests with end users, with the full team involved throughout.</li>
+  </ul>
+  <p>We developed two distinct prototypes — a <strong>draggable modal</strong> (a floating window users could dock to the side, inspired by Google Calendar) and a <strong>collapsible drawer</strong> (a side panel users could open or collapse without losing booking context). Both were tested with 10 users across Mexico, Spain and Brazil, with strong UX metrics and enthusiastic feedback.</p>
+
+  <div class="visual reveal">Draggable modal vs. collapsible drawer — concept prototypes</div>
+
+  <h2>Design solution</h2>
+  <p>Based on testing and team discussion, we selected the <strong>collapsible drawer</strong> for its flexibility and usability, refining it through Q3 2022 into the final design.</p>
+  <h3>Key benefits</h3>
+  <ul>
+    <li>Users can create and reschedule appointments without losing calendar context.</li>
+    <li>A cleaner, more organized interface.</li>
+    <li>Grouped actions that reduce cognitive load.</li>
+    <li>Smarter, contextual warnings based on user actions and timing.</li>
+  </ul>
+
+  <h2>Challenges and learnings</h2>
+  <p>This was a deep product immersion that pushed my growth within the company — structured communication, a consistent design process, well-organized documentation, and learning to navigate technical constraints without losing momentum.</p>
+
+  <h2>Achievements</h2>
+  <p>The functionality rolled out gradually across all countries as we gathered feedback and iterated — it's now in production everywhere, with excellent feedback from both users and internal stakeholders.</p>
+
+  <div class="callout-grid reveal">
+    <div class="callout"><div class="num">+15%</div><div class="cap">increase in conversion rate</div></div>
+    <div class="callout"><div class="num">-40%</div><div class="cap">reduction in booking time</div></div>
+    <div class="callout"><div class="num">-22%</div><div class="cap">drop-off rate reduced</div></div>
+  </div>
+
+</article>
+</div>
+
+<div class="wrap">
+  <a class="next-project" href="design-system-uefa.html" style="display:block;">
+    <div class="label">NEXT PROJECT — 03/06</div>
+    <h3>Design System for B2B, UEFA
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </h3>
+  </a>
+</div>
+
+<footer class="wrap">
+  <div>© <span id="year"></span> Miguel Alonso. All rights reserved.</div>
+  <div class="social">
+    <a href="../index.html#work">Work</a>
+    <a href="mailto:hello@dverse.net">Email</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

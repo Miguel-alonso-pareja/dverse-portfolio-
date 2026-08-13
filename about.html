@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Miguel Alonso</title>
+<meta name="description" content="Product designer based in Barcelona. Interaction design, visual design, user research, strategy and prototyping.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0b0d%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23a7ffb0%22 font-family=%22monospace%22>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="glow"></div>
+
+<nav class="nav">
+  <div class="brand"><span class="dot"></span> <a href="index.html">M. Alonso</a></div>
+  <div class="links">
+    <a href="index.html#work">Work</a>
+    <a href="about.html" class="active">About</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+  </div>
+</nav>
+
+<header class="project-hero">
+  <div class="wrap">
+    <div class="eyebrow reveal in"><span class="bar"></span> ABOUT</div>
+    <h1 class="reveal in">Product design, grounded in research and shipped with craft.</h1>
+    <p class="dek reveal in">Miguel Alonso — product designer based in Barcelona, with 10+ years delivering end-to-end UX/UI for software products across gaming, health-tech, sports and social-impact platforms.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="lead-text">
+        <p>I design intuitive digital products and lead creative teams to deliver exceptional, <strong>user-centered experiences</strong>. With a focus on aesthetics, usability, and innovation, I thrive in fast-paced environments — bringing ideas to life and driving real impact through thoughtful design.</p>
+        <p>I'm passionate about bridging the gap between business goals and user needs to create work that's not only beautiful, but meaningful and effective.</p>
+        <p>I strongly believe design should always be a core part of product strategy. A real, transparent partnership between product managers, developers and designers is the right way to succeed.</p>
+        <p>Throughout my career I've crafted digital products for companies including <strong>Telefónica Digital, King (Activision Blizzard), UEFA, Doc Planner, Atrápalo</strong> and now <strong>Benevity</strong>.</p>
+        <p>Outside of work I'm into technology, music, nature, mountains, trekking and travelling — and I collect graffiti and urban art.</p>
+      </div>
+      <a class="btn ghost" href="mailto:hello@dverse.net" style="margin-top:8px;">See full résumé →</a>
+    </div>
+    <div class="reveal">
+      <div class="section-head" style="margin-bottom:20px;"><h2 style="font-size:20px;">Skills</h2></div>
+      <div class="skill"><div class="row"><span>Interaction design</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>Visual design</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>User research methodologies</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>User-centered design</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>Strategy, concept &amp; ideation</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>Prototyping</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>Figma</span><span>100%</span></div><div class="track"><div class="fill" data-fill="100%"></div></div></div>
+      <div class="skill"><div class="row"><span>HTML / CSS coding</span><span>45%</span></div><div class="track"><div class="fill" data-fill="45%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="section-head"><h2>I've worked with</h2></div>
+    <div class="companies">
+      <span>Telefónica Digital</span>
+      <span>King — Activision Blizzard</span>
+      <span>UEFA</span>
+      <span>Doc Planner</span>
+      <span>Atrápalo</span>
+      <span>Benevity</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta section" id="contact">
+  <div class="wrap">
+    <h2>Say hello.</h2>
+    <p style="color:var(--ink-dim); max-width:480px; margin: 0 auto 32px;">Open to new product design opportunities and collaborations — reach out any time.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a class="btn primary" href="mailto:hello@dverse.net">hello@dverse.net</a>
+      <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© <span id="year"></span> Miguel Alonso. All rights reserved.</div>
+  <div class="social">
+    <a href="index.html#work">Work</a>
+    <a href="mailto:hello@dverse.net">Email</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>
