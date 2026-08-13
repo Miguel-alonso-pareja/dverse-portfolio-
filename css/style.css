@@ -426,6 +426,19 @@ footer a:hover{ color: var(--ink); }
   align-items:center;
   justify-content:center;
 }
+.visual.has-image{
+  padding: 0;
+  background: none;
+  overflow: hidden;
+  display: block;
+}
+.visual.has-image img,
+.visual.has-image video{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 1px);
+}
 
 .next-project{
   border-top: 1px solid var(--line);
