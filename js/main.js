@@ -35,6 +35,27 @@
     }, {passive:true});
   }
 
+  // Mobile menu
+  const menuBtn = document.querySelector('.menu-toggle');
+  if(menuBtn && nav){
+    function closeMenu(){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    }
+    menuBtn.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.querySelectorAll('.links a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 720) closeMenu();
+    });
+  }
+
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && revealEls.length){
