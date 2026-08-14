@@ -87,7 +87,47 @@
     skillFills.forEach(function(el){ io2.observe(el); });
   }
 
-  // Live local-time badge (Barcelona)
+  // Work-list hover thumbnails (desktop pointer only)
+  const workRows = document.querySelectorAll('.work-row[data-thumb]');
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(canHover && workRows.length){
+    const thumb = document.createElement('div');
+    thumb.className = 'work-thumb';
+    thumb.setAttribute('aria-hidden', 'true');
+    const img = document.createElement('img');
+    img.alt = '';
+    thumb.appendChild(img);
+    document.body.appendChild(thumb);
+
+    const w = 220, h = 132, gap = 20, pad = 16;
+    let fadeTimer;
+    workRows.forEach(function(row){
+      const src = row.getAttribute('data-thumb');
+      const preload = new Image();
+      preload.src = src;
+      row.addEventListener('pointerenter', function(){
+        img.src = src;
+        thumb.classList.remove('is-visible');
+        clearTimeout(fadeTimer);
+        fadeTimer = setTimeout(function(){
+          thumb.classList.add('is-visible');
+        }, 20);
+      });
+      row.addEventListener('pointerleave', function(){
+        clearTimeout(fadeTimer);
+        thumb.classList.remove('is-visible');
+      });
+      row.addEventListener('pointermove', function(e){
+        let x = e.clientX + gap;
+        let y = e.clientY - h * 0.7;
+        if(x + w > window.innerWidth - pad) x = e.clientX - gap - w;
+        if(y < pad) y = pad;
+        if(y + h > window.innerHeight - pad) y = window.innerHeight - h - pad;
+        thumb.style.left = x + 'px';
+        thumb.style.top = y + 'px';
+      });
+    });
+  }
   const clock = document.getElementById('local-time');
   if(clock){
     function tick(){
