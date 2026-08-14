@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Search Experience — Benevity | Miguel Alonso</title>
+<meta name="description" content="An in-progress redesign of Benevity's Goodness search — from keyword lookup to a conversational, AI-assisted experience that understands intent.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0b0d%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23a7ffb0%22 font-family=%22monospace%22>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="glow"></div>
+
+<nav class="nav">
+  <div class="brand"><span class="dot"></span> <a href="../index.html">M. Alonso</a></div>
+  <div class="links">
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../about.html#contact">Contact</a>
+    <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+  </div>
+</nav>
+
+<header class="project-hero wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+  <div class="tags reveal in"><span class="tag">Benevity</span><span class="tag">Conversational AI · Search</span><span class="tag">B2B SaaS</span><span class="tag">2025–26</span></div>
+  <h1 class="reveal in">Reimagining search with conversational design and AI.</h1>
+  <p class="dek reveal in">An in-progress redesign of Benevity's Goodness search — moving from keyword lookup to a conversational, AI-assisted experience that understands intent, surfaces context, and helps employees act on what matters to them.</p>
+
+  <div class="meta-strip reveal">
+    <div><span class="k">COMPANY</span><span class="v">Benevity</span></div>
+    <div><span class="k">ROLE</span><span class="v">Lead Product Designer</span></div>
+    <div><span class="k">TIMEFRAME</span><span class="v">2025 – present · Phase 2: Design</span></div>
+    <div><span class="k">TEAM</span><span class="v">Product Manager · Tech Lead · Designer</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="prose">
+
+  <h2>Context</h2>
+  <p><strong>Benevity</strong>'s Goodness platform lets employees search for volunteering opportunities, nonprofits and giving campaigns across a catalog of hundreds of thousands of organizations. The existing search behaved like a plain keyword lookup — broad, generic, and blind to intent.</p>
+  <p>This project explores what search could be instead: a <strong>conversational, AI-assisted experience</strong> built on semantic understanding, real-time synthesis and personalization, rather than exact string matching.</p>
+
+  <h2>My role</h2>
+  <p>I'm leading the design exploration end-to-end — framing the problem, defining design principles for AI-assisted search, and designing the 60% proof-of-concept flows now in review with engineering and product ahead of a broader design-review cycle.</p>
+
+  <h2>Problem to solve</h2>
+  <p>Discovery surfaced five recurring pain points with the existing search experience:</p>
+  <ul>
+    <li><strong>Inconsistent functionality across domains</strong> — siloed, rigid, and out of step with modern user expectations.</li>
+    <li><strong>Incomplete or irrelevant results</strong>, with little contextual understanding.</li>
+    <li><strong>Poor search accuracy and precision.</strong></li>
+    <li><strong>Limited, hard-to-use filtering options.</strong></li>
+    <li><strong>General usability and intuitiveness issues.</strong></li>
+  </ul>
+
+  <h2>Expected outcome</h2>
+  <p>The goal: someone should be able to find a volunteering or giving opportunity that matches their intent within one or two searches — with results that clearly explain why they're relevant, and let people act immediately (sign up, donate, save, share).</p>
+  <div class="callout-grid four">
+    <div class="callout"><div class="num">01</div><div class="cap">Prioritize empathy &amp; trust</div></div>
+    <div class="callout"><div class="num">02</div><div class="cap">Focus on actionable outcomes</div></div>
+    <div class="callout"><div class="num">03</div><div class="cap">Be specific &amp; impact-oriented</div></div>
+    <div class="callout"><div class="num">04</div><div class="cap">Foster community &amp; connection</div></div>
+  </div>
+
+  <h2>Grounding the design in a scenario</h2>
+  <p>Rather than designing against an abstract feature list, the team built a short narrative around <strong>Priya</strong>, an employee who regularly supports local animal shelters:</p>
+  <div class="narrative">
+    <div class="n-row"><div class="n-badge">1</div><div class="n-bubble">Priya is an animal lover. She often supports local shelters and nonprofits.</div></div>
+    <div class="n-row"><div class="n-badge">2</div><div class="n-bubble">When she searches “donate to an animal shelter,” the results feel overwhelming and generic. She wants an easier way to refine.</div></div>
+    <div class="n-row"><div class="n-badge">3</div><div class="n-bubble">Priya wants to see, in the search results, proof of impact: stories, outcomes, and exactly how her donation will be used.</div></div>
+    <div class="n-row"><div class="n-badge">4</div><div class="n-bubble">Benevity AI supports Priya's search by understanding what inspires her to give and what the nonprofit needs most now.</div></div>
+  </div>
+
+  <h2>Capabilities</h2>
+  <p>Two capability tracks shape the experience:</p>
+  <div class="cap-grid">
+    <div class="cap-col">
+      <h3>NLP</h3>
+      <ol>
+        <li>Semantic search — understanding relationships between words, not just keyword matches.</li>
+        <li>Parses a query's intent: subject, cause and action.
+          <div class="cap-sub">e.g. Animal Shelters · Animals with special needs · Donation</div>
+        </li>
+        <li>Conversational interface that keeps refining as the user types.</li>
+      </ol>
+    </div>
+    <div class="cap-col">
+      <h3>Real-time data</h3>
+      <ol>
+        <li>Data synthesis and summarization.</li>
+        <li>Prioritization.</li>
+        <li>Personalization based on user and company signals.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2>The design</h2>
+  <p>A full walkthrough of the 60% proof-of-concept — from the personalized dashboard through conversational search, AI-generated overviews and filtered results — currently in review with engineering and product.</p>
+
+  <div class="visual has-image reveal">
+    <video controls preload="metadata" poster="../assets/img/ai-search-experience-poster.jpg" playsinline>
+      <source src="../assets/video/ai-search-experience.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p>A narrated run-through of the flow: the personalized greeting and dashboard, a conversational search, the AI-generated overview grounding the results, filtering, and results grouped by intent.</p>
+
+  <h2>Status</h2>
+  <ul>
+    <li>Delivered a 60% proof-of-concept spanning dashboard, conversational search, filtering and AI-generated overviews.</li>
+    <li>Defined four design principles for AI-assisted, empathetic search, now referenced across the design team.</li>
+    <li>In review with engineering and product ahead of the next design-review cycle.</li>
+  </ul>
+
+</article>
+</div>
+
+<div class="wrap">
+  <a class="next-project" href="ai-suggestion-engine.html" style="display:block;">
+    <div class="label">NEXT PROJECT — 03/06</div>
+    <h3>AI Suggestion Engine, Benevity
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </h3>
+  </a>
+</div>
+
+<footer class="wrap">
+  <div>© <span id="year"></span> Miguel Alonso. All rights reserved.</div>
+  <div class="social">
+    <a href="../index.html#work">Work</a>
+    <a href="mailto:hello@dverse.net">Email</a>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
