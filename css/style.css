@@ -574,6 +574,14 @@ footer a:hover{ color: var(--ink); }
   display: block;
   border-radius: calc(var(--radius) - 1px);
 }
+.visual.has-image.visual-short img{
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 720px){
+  .visual.has-image.visual-short img{ height: 160px; }
+}
 
 .next-project{
   border-top: 1px solid var(--line);
