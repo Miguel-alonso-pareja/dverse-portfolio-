@@ -606,3 +606,32 @@ footer a:hover{ color: var(--ink); }
   margin-bottom: 24px;
 }
 .back-link:hover{ color: var(--ink); }
+
+.method-layer{
+  margin: 72px 0 0;
+  padding: 32px 28px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+.method-layer .layer-kicker{
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 10px;
+}
+.method-layer h2{ margin-top: 0; }
+.method-layer h3{ font-family: var(--sans); }
+.method-layer .note{
+  border-left: 2px solid var(--accent);
+  padding: 4px 0 4px 18px;
+  margin: 8px 0 24px;
+  color: var(--ink-dim);
+  font-size: 15.5px;
+}
+.method-layer .note strong{ color: var(--ink); }
+@media (max-width: 720px){
+  .method-layer{ padding: 24px 18px 4px; }
+}

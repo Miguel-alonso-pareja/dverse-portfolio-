@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The AI Design Flow — Bsport | Miguel Alonso</title>
-<meta name="description" content="An AI-assisted design flow: from brief to a real, working prototype built in code with an AI pair-programmer, validated with real users before a single line of production code is written.">
+<title>Audit Trail — Bsport | Miguel Alonso</title>
+<meta name="description" content="A searchable, filterable log of everything that happens in a Bsport studio — bookings, passes, communications, classes and payments — with CSV export and an AI-powered Ask the trail query bar.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0b0d%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23a7ffb0%22 font-family=%22monospace%22>M</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,9 @@
 
 <header class="project-hero wrap">
   <a class="back-link" href="../index.html#work">← All work</a>
-  <div class="tags reveal in"><span class="tag">Bsport</span><span class="tag">AI-Assisted Design</span><span class="tag">Rapid Prototyping</span><span class="tag">2025–26</span></div>
-  <h1 class="reveal in">An AI-powered design flow: from brief to build, without the handoff gap.</h1>
-  <p class="dek reveal in">A leaner, AI-assisted path from a product requirement to a working, testable prototype — built directly in code with an AI pair-programmer (Cursor), versioned in GitLab, and shared with real users before a single line of production code is written.</p>
+  <div class="tags reveal in"><span class="tag">Bsport</span><span class="tag">Studio operations</span><span class="tag">Search &amp; AI</span><span class="tag">2025–26</span></div>
+  <h1 class="reveal in">A searchable log of everything that happens in a studio.</h1>
+  <p class="dek reveal in">Audit trail gives studio owners and staff a filterable record of bookings, passes &amp; credits, communications, classes, and invoices &amp; payments — including automated events from connected apps like ClassPass — plus CSV export and an AI-powered “Ask the trail” bar.</p>
 
   <div class="meta-strip reveal">
     <div><span class="k">COMPANY</span><span class="v">Bsport</span></div>
@@ -45,43 +45,60 @@
 <div class="wrap">
 <article class="prose">
 
+  <h2>Context</h2>
+  <p><strong>Bsport</strong> is an all-in-one management platform for boutique fitness studios — bookings, members, payments, communications and connected apps in one place. Studio owners and front-desk staff spend their day jumping between those systems, and when something goes wrong they need to reconstruct what actually happened.</p>
+
   <h2>Problem to solve</h2>
-  <p>Most design workflows lose time at the seams — between research and requirements, between static mockups and working code, between "looks right" and "works right." This flow closes those gaps by bringing an AI pair-programmer into the process early: instead of a polished static comp, the prototype is a real, AI-generated, running interface from the start — reviewed the same way engineering reviews code, through a merge request, on a live disposable environment, with actual users clicking through it.</p>
+  <p>Account activity was scattered. A cancelled booking, a ClassPass check-in, a credit adjustment or an invoice change could live in different tools, with no single place to search, filter or explain the sequence. Support tickets piled up around “who did what, and when?” — and the existing log was too thin to answer that without digging.</p>
+  <p>The brief for Audit trail V3 was to make that history usable: one searchable, filterable trail that studio teams could trust, export, and query in plain language.</p>
 
-  <h2>The flow</h2>
+  <h2>The product</h2>
+  <p>Audit trail V3 is a working operations log for the studio account. It lists every relevant event with date &amp; time, team member, category, action and item — so a cancelled class or an added pass credit is as easy to find as a payment.</p>
   <ul>
-    <li><strong>Discovery &amp; research</strong> — grounding the problem before any screen exists: gathering existing research, prior art, support tickets, and usage data into a shared set of docs.</li>
-    <li><strong>Alignment with product</strong> — the first real touchpoint with the PM, walking through the PRD together to pin down requirements and negotiate scope.</li>
-    <li><strong>Rapid prototyping, in code, with AI</strong> — a static Figma pass settles layout where needed, but the prototype that actually gets tested is built with Cursor, turning requirements straight into working code. It's pushed to GitLab like any other change, spinning up an <strong>ephemeral environment</strong> — a temporary, shareable, live instance of that branch — so reviewers react to a real running interface, not a flat image.</li>
-    <li><strong>Validate with users</strong> — the ephemeral environment's link makes testing lightweight: no build step, no local setup, just a URL. Feedback goes back into the same branch before anything is final.</li>
-    <li><strong>Handoff to engineering</strong> — because the prototype already lives in GitLab as real code, handoff is a continuation of the same merge request, not a separate export step.</li>
+    <li><strong>Filter and display controls</strong> — narrow the trail by category, person or time instead of scrolling a raw dump.</li>
+    <li><strong>Cross-system events</strong> — including automated activity from connected apps like ClassPass, not only actions taken inside Bsport.</li>
+    <li><strong>CSV export</strong> — for accountants, owners and anyone who needs the trail outside the product.</li>
+    <li><strong>Ask the trail</strong> — an AI query bar for questions in plain language: what happened last Tuesday, who cancelled a booking, when credits were added.</li>
   </ul>
-
-  <div class="visual has-image reveal">
-    <img src="../assets/img/ai-design-flow-cursor.jpg" alt="Cursor connected to the project repo, with the Audit trail V3 prototype running locally alongside the AI chat panel.">
-  </div>
-  <p>Cursor connected to the project repo, with the Audit trail V3 prototype running against the local dev environment — AI panel on the right coordinating the dev server.</p>
-
-  <div class="note" style="margin-top:-4px;">
-    <strong>Why code first:</strong> a clickable, real prototype surfaces edge cases, data states, and interaction quirks that a static comp hides — and it's already halfway to the real implementation.
-  </div>
-
-  <h2>Featured prototype — Audit trail V3</h2>
-  <p>A concrete example of the flow in practice. "Audit trail" gives studio owners and staff a searchable, filterable log of everything that happens on their account — bookings, passes &amp; credits, communications, classes, and invoices &amp; payments — including automated events from connected apps like ClassPass. It supports CSV export and an AI-powered "Ask the trail" query bar for asking questions about the log in plain language.</p>
-  <p>This was built as a fully functional, working prototype in a single day — not a static mockup — running against a live local dev environment inside Cursor, and used throughout the process to validate the feature with real stakeholders before any of it was rebuilt for production.</p>
 
   <div class="visual has-image reveal">
     <video src="../assets/video/ai-design-flow-audit-trail.mp4" controls muted loop playsinline preload="metadata"></video>
   </div>
-  <p>Audit trail V3 running as a working prototype — filtering, search, CSV export, and the "Ask the trail" AI query bar, all functional on day one.</p>
+  <p>Audit trail V3 as a working prototype — filtering, search, CSV export, and the “Ask the trail” query bar, all functional on day one.</p>
 
-  <h2>Why this flow works</h2>
-  <ul>
-    <li><strong>Fewer translation losses</strong> — design intent survives handoff because it's already expressed in code, not re-interpreted from a static file.</li>
-    <li><strong>Real feedback, earlier</strong> — users react to something that actually behaves like the product, catching issues static mockups can't reveal.</li>
-    <li><strong>One source of truth</strong> — the prototype, the review, and the eventual implementation all live in the same GitLab history.</li>
-    <li><strong>Shareable by default</strong> — ephemeral environments turn every prototype into a link anyone can open, no setup, no context lost.</li>
-  </ul>
+  <h2>What we validated</h2>
+  <p>The prototype ran against a live local environment and was used with real stakeholders before anything was rebuilt for production. That let the team pressure-test empty states, filter combinations, and whether “Ask the trail” returned answers people could act on — not just whether the layout looked right.</p>
+
+  <section class="method-layer reveal" id="method" aria-labelledby="method-title">
+    <p class="layer-kicker">How it was designed</p>
+    <h2 id="method-title">The AI design flow</h2>
+    <p>This project was also a test of a leaner path from brief to a testable prototype: built in code with an AI pair-programmer, versioned in GitLab, and shared with real users before a single line of production code was written.</p>
+
+    <ul>
+      <li><strong>Discovery &amp; research</strong> — grounding the problem before any screen exists: existing research, prior art, support tickets, and usage data in a shared set of docs.</li>
+      <li><strong>Alignment with product</strong> — walking through the PRD with the PM to pin down requirements and negotiate scope.</li>
+      <li><strong>Rapid prototyping, in code, with AI</strong> — a static Figma pass settles layout where needed, but the prototype that gets tested is built with Cursor and pushed to GitLab. That branch spins up an <strong>ephemeral environment</strong> — a temporary, shareable, live instance — so reviewers react to a running interface, not a flat image.</li>
+      <li><strong>Validate with users</strong> — the environment’s link makes testing lightweight: no build step, no local setup, just a URL. Feedback goes back into the same branch.</li>
+      <li><strong>Handoff to engineering</strong> — because the prototype already lives in GitLab as real code, handoff is a continuation of the same merge request, not a separate export step.</li>
+    </ul>
+
+    <div class="visual has-image">
+      <img src="../assets/img/ai-design-flow-cursor.jpg" alt="Cursor connected to the project repo, with the Audit trail V3 prototype running locally alongside the AI chat panel.">
+    </div>
+    <p>Cursor connected to the project repo, with Audit trail V3 running against the local dev environment — AI panel on the right coordinating the dev server.</p>
+
+    <div class="note">
+      <strong>Why code first:</strong> a clickable, real prototype surfaces edge cases, data states, and interaction quirks that a static comp hides — and it’s already halfway to the real implementation.
+    </div>
+
+    <h3>Why this flow worked here</h3>
+    <ul>
+      <li><strong>Fewer translation losses</strong> — design intent survives handoff because it’s already expressed in code.</li>
+      <li><strong>Real feedback, earlier</strong> — stakeholders react to something that behaves like the product.</li>
+      <li><strong>One source of truth</strong> — the prototype, the review, and the eventual implementation share the same GitLab history.</li>
+      <li><strong>Shareable by default</strong> — ephemeral environments turn every prototype into a link anyone can open.</li>
+    </ul>
+  </section>
 
 </article>
 </div>
